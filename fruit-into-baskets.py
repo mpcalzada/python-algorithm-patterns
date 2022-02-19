@@ -20,6 +20,18 @@ def totalFruit(fruits):
                 del current_fruits[delete_key]
     return max(max_count, count)
 
+def totalFruitTwo(tree):
+        count, i = {}, 0
+        for j, v in enumerate(tree):
+            count[v] = count.get(v, 0) + 1
+            print(f"{count=}")
+            if len(count) > 2:
+                count[tree[i]] -= 1
+                if count[tree[i]] == 0: del count[tree[i]]
+                i += 1
+        return j - i + 1
+
 
 if __name__ == '__main__':
-    print(totalFruit([1, 2, 3, 2, 2]))
+    print(totalFruit([1, 2, 1, 3, 2, 2]))
+    print(totalFruitTwo([1, 2, 1, 3, 2, 2]))

@@ -3,7 +3,7 @@ def max_sub_array_of_size_k(k, arr):
     last_max = 0
     initial_position = 0
     max_sum = 0
-    for i in range(len(arr)):   # O(n)
+    for i in range(len(arr)):   # O(n) 
         max_sum += arr[i]
         if((initial_position + k - 1) == i):
             last_max = max(last_max, max_sum)

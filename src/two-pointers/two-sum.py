@@ -1,6 +1,16 @@
-import enum
+
+# This solution has a O(n) time complexity and O(n) space complexity because of the HashMap
+def twoSumWithHash(nums, target):
+    pairs = {}
+    for i, val1 in enumerate(nums):
+        val2 = target - val1
+        if val2 in pairs:
+            return [pairs[val2], i]
+        else:
+            pairs[val1] = i
 
 
+# This solution has a O(n) time complexity and O(1) space complexity because of the HashMap
 def twoSum(nums, target):
     """
     :type nums: List[int]
@@ -19,11 +29,9 @@ def twoSum(nums, target):
         else:
             return[p1, p2]
     return [p1, p2]
-        
-    
 
 
 if __name__ == '__main__':
-    print(twoSum([2,7,11,15], 9))
-    print(twoSum([-1,-2,-3,-4,-5], -8))
-    print(twoSum([-10,7,19,15], 9))
+    print(twoSum([2, 7, 11, 15], 9))
+    print(twoSum([-1, -2, -3, -4, -5], -8))
+    print(twoSum([-10, 7, 19, 15], 9))
